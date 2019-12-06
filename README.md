@@ -14,9 +14,7 @@ Band size parameters can be changed within the python script:
 ![indigestion_script.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_script.jpeg)
 
 Requirements:
-
 - Biopython
-
 - Reference files
    * my_enzymes.csv - <i>a csv containing the user's enzymes on-hand (to be modified by user)</i>
    * enzyme_dictionary.csv - <i>a csv containing reference information for enzyme names and cutting patterns</i>
