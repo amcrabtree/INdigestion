@@ -6,6 +6,8 @@ When entering a list of files, separate by commas and no spaces between filename
 
 This program works on circular plasmids only. 
 
+This program assumes that you are digesting a vector with a gene insert. It selects only enzymes or enzyme pairs that cuts in this insert. You must have the gene insert annotated as "gene" in Ape (a plasmid editor) or other similar program that saves to genbank format. 
+
 ![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
 
 Band size parameters can be changed within the python script:
