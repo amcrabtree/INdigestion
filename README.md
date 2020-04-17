@@ -14,9 +14,6 @@ Dependencies: [biopython](https://biopython.org/)
    * enzyme_dictionary.csv - <i>a csv containing reference information for enzyme names and cutting patterns</i>
 
 
-
-
-
 <b>Adjusting Script & Auxillary Files Before Running: </b>
 
 Band size parameters can be changed within the python script:
@@ -28,8 +25,9 @@ Band size parameters can be changed within the python script:
 
 -Full filename(s) of plasmid(s). When entering a list of files, separate by commas and no spaces between filenames. Include extension as part of the name. 
 
-
-
+ 
+  
+  
 <b>Program Output:</b>
 
 ![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
