@@ -9,8 +9,8 @@ What this program does:
 <b>Files Required for Program to Run:</b>
 1. Annotated plasmid file(s). Must be in genbank format. PLASMID MUST BE CIRCULARIZED. GENE INSERT MUST BE ANNOTATED AS "GENE". These requirements are easy to accomplish with the program Ape (a plasmid editor), which will save your output to the correct format for this program. Either that or manually adjust the text in the genbank file. Note that this program selects only enzymes or enzyme pairs that cuts at least once within the specified gene. 
 2. Reference files:
-* my_enzymes.csv - <i>a csv containing the user's enzymes on-hand (to be modified by user)</i>
-* enzyme_dictionary.csv - <i>a csv containing reference information for enzyme names and cutting patterns.</i> Note that not all enzymes are on here yet. Add more enzymes as necessary. NEB has a nice list of recognition sites [here](https://www.neb.com/tools-and-resources/selection-charts/alphabetized-list-of-recognition-specificities). 
+   * my_enzymes.csv - <i>a csv containing the user's enzymes on-hand (to be modified by user)</i>
+   * enzyme_dictionary.csv - <i>a csv containing reference information for enzyme names and cutting patterns.</i> Note that not all enzymes are on here yet. Add more enzymes as necessary. NEB has a nice list of recognition sites [here](https://www.neb.com/tools-and-resources/selection-charts/alphabetized-list-of-recognition-specificities). 
 <p>&nbsp;</p>
 
 <b>Adjusting Script & Reference Files Before Running: </b>
@@ -26,4 +26,4 @@ What this program does:
 
 <b>Program Output:</b>
 
-![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
+&nbsp;&nbsp;&nbsp;&nbsp;![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
