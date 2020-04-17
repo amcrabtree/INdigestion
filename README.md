@@ -26,4 +26,4 @@ What this program does:
 
 <b>Program Output:</b>
 
-   &nbsp;&nbsp;&nbsp;&nbsp;![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
+&nbsp;&nbsp;&nbsp;&nbsp;![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
