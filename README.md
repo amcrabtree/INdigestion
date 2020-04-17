@@ -3,6 +3,7 @@ What this program does:
 "I Need a digestion" prints expected gel band sizes from restriction digests. The user can specify which enzymes they have on-hand and what band sizes they prefer.
 
 &nbsp;&nbsp;Dependencies: [biopython](https://biopython.org/)
+
 ![biopython-logo](https://raw.githubusercontent.com/amcrabtree/synteny-mapper/master/images/biopython_logo_white.png)
 
 <b>Files Required for Program to Run:</b>
