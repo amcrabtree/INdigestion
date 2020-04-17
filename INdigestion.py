@@ -18,7 +18,7 @@ from itertools import combinations
 min_frags = 2               # minimum number of bands on gel
 max_frags = 6               # maximum number of bands on gel
 min_frag_size = 500         # minimum size of bands on gel
-max_frag_size = 3000        # maximum size of bands on gel
+max_frag_size = 4000        # maximum size of bands on gel
 min_frag_size_dif = 100     # minimum size difference between bands on gel
 
 
@@ -192,7 +192,9 @@ for plasmid_file in filelist:
     print("-----------------------------------------------")
     print("File:",plasmid_file)
     short_list = []
-    g_flag = 0           # flag for if there's a gene in the sequence
+    g_flag = 0          # flag for if there's a gene in the sequence
+    x_flag = 0          # flag for if there's a cut site in the sequence for the parameters
+    cutting_enzymes_list = [] # list of enzymes that cut the plasmid, potential for use in 2-combo enzymes
     
     # display coordinates of insert
     for feature in plasmid_record.features:
@@ -219,19 +221,20 @@ for plasmid_file in filelist:
             
         cut_from_5 = int(enzyme_dict[row_tuple][2])
         cut_list = cuts(enzyme_cut_pattern_list, cut_from_5, plasmid_seq)
-
+        if cut_list != []:  # (this is to prevent an enzyme that doesn't cut from showing up as a 2-combo result)
+            cutting_enzymes_list.append(enzyme_name) 
         frag_list = frag_calc(cut_list, plasmid_seq)
         if frag_length_violation(frag_list) == 1: #if there are bad fragment lengths
             frag_list = []
-
         if len(frag_list) <= max_frags and len(frag_list) > 0:
             gene_dx = gene_cut(cut_list, plasmid_record)
             if gene_dx == 1: # if there are cuts within the gene
                 if len(frag_list) >= min_frags:
                     print("Fragment sizes produced by",enzyme_name,":\t",frag_list)
-                    
+                    x_flag = 1
+    
     #generate fragment list for 2 enyzmes
-    combo_list = combinations(my_final_enzyme_list, 2)
+    combo_list = combinations(cutting_enzymes_list, 2)
     for ep in combo_list:
         cut_list = cuts2(ep, plasmid_seq)
         gene_dx = gene_cut(cut_list, plasmid_record)
@@ -242,4 +245,8 @@ for plasmid_file in filelist:
                     frag_list = []
                 else: 
                     if len(frag_list) <= max_frags and len(frag_list) >= min_frags:   
-                        print("Fragment sizes produced by",ep[0],"+",ep[1],":\t",frag_list)       
+                        print("Fragment sizes produced by",ep[0],"+",ep[1],":\t",frag_list)
+                        x_flag = 1
+
+    if x_flag == 0:
+        print("No eligible cut sites in this sequence. Relax parameters and try again.")
