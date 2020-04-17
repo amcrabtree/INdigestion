@@ -2,9 +2,9 @@
 What this program does:
 "I Need a digestion" prints expected gel band sizes from restriction digests. The user can specify which enzymes they have on-hand and what band sizes they prefer.
 
-&nbsp;&nbsp;Dependencies: [biopython](https://biopython.org/)
+&nbsp;&nbsp;&nbsp;Dependencies: [biopython](https://biopython.org/)
 
-![biopython-logo](https://raw.githubusercontent.com/amcrabtree/synteny-mapper/master/images/biopython_logo_white.png)
+&nbsp;&nbsp;&nbsp;![biopython-logo](https://raw.githubusercontent.com/amcrabtree/synteny-mapper/master/images/biopython_logo_white.png)
 
 <b>Files Required for Program to Run:</b>
 1. Annotated plasmid file(s). Must be in genbank format. PLASMID MUST BE CIRCULARIZED. GENE INSERT MUST BE ANNOTATED AS "GENE". These requirements are easy to accomplish with the program Ape (a plasmid editor), which will save your output to the correct format for this program. Either that or manually adjust the text in the genbank file. Note that this program selects only enzymes or enzyme pairs that cuts at least once within the specified gene. 
