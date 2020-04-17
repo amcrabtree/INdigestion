@@ -2,9 +2,9 @@
 What this program does:
 "I Need a digestion" prints expected gel band sizes from restriction digests. The user can specify which enzymes they have on-hand and what band sizes they prefer.
 
-Dependencies: [biopython](https://biopython.org/)
+    Dependencies: [biopython](https://biopython.org/)
 
-![biopython-logo](https://raw.githubusercontent.com/amcrabtree/synteny-mapper/master/images/biopython_logo_white.png)
+    ![biopython-logo](https://raw.githubusercontent.com/amcrabtree/synteny-mapper/master/images/biopython_logo_white.png)
 
 
 <b>Files Required for Program to Run:</b>
@@ -17,14 +17,14 @@ Dependencies: [biopython](https://biopython.org/)
 
 <b>Adjusting Script & Auxillary Files Before Running: </b>
 
-Band size parameters can be changed within the python script:
+    Band size parameters can be changed within the python script:
 ![indigestion_script.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_script.jpeg)
 
 <p>&nbsp;</p>
 
 <b>Program Input:</b>
 
--Full filename(s) of plasmid(s). When entering a list of files, separate by commas and no spaces between filenames. Include extension as part of the name. 
+    - Full filename(s) of plasmid(s). When entering a list of files, separate by commas and no spaces between filenames. Include extension as part of the name. 
 
 <p>&nbsp;</p>
   
