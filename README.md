@@ -1,10 +1,44 @@
 # INdigestion
 What this program does:
-"I Need a digestion" prints expected gel band sizes from restriction digests. The user can specify which enzymes they have on-hand and what band sizes they prefer.
+"<u>I</u> <u>N</u>eed a <u>digestion</u>" ("INdigestion.py") is a python command-line app which prints expected gel band sizes from restriction digests. The user can specify which enzymes they have in their lab and what band sizes they prefer. For individuals new to command-line interface, there is also a GUI ("INdigestion_zenity.sh") which facilitates proper input of arguments and runs the command line app via a series of prompts. 
+<p>&nbsp;</p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Dependencies: [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/)
+<b>Dependencies</b>
+* [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/), [zenity](https://linuxconfig.org/how-to-use-graphical-widgets-in-bash-scripts-with-zenity)
 
-&nbsp;&nbsp;&nbsp;&nbsp;![biopython-logo](https://raw.githubusercontent.com/amcrabtree/synteny-mapper/master/images/biopython_logo_white.png)
+Downloading zenity
+&nbsp;&nbsp;&nbsp;&nbsp;MacOS using [Homebrew](https://formulae.brew.sh/formula/zenity):
+```
+brew install zenity
+```
+&nbsp;&nbsp;&nbsp;&nbsp;Linux (or windows users using [Ubuntu](https://zoomadmin.com/HowToInstall/UbuntuPackage/zenity) app):
+```
+sudo apt-get update -y
+sudo apt-get install -y zenity
+```
+<p>&nbsp;</p>
+
+<b>CLI Usage</b>
+```
+python3 INdigestion.py -p my_plasmid.gb
+```
+<p>&nbsp;</p>
+
+<b>Options</b>
+flag | description
+------------ | -------------
+-p	[ARG]	| (required) plasmid file: <i>.gb .gbk .genbank .ape .fasta .fa </i>
+-e	[ARG]	| file with list of your enzymes ("my_enzymes.csv"), if not in script folder
+-n	[ARG]	| minimum number of desired bands
+-x	[ARG]	| maximum number of desired bands
+-s	[ARG]	| smallest size of desired bands
+-b	[ARG]	| biggest size of desired bands
+-g	[ARG]	| minimum gap size between bands
+-i		| no insert in plasmid
+-f		| plasmid in fasta format (no insert)
+-t		| tests program with .gb test file
+-h		| help (print options)
+<p>&nbsp;</p>
 
 <b>Files Required for Program to Run:</b>
 1. Annotated plasmid file(s). Must be in genbank format. PLASMID MUST BE CIRCULARIZED. GENE INSERT MUST BE ANNOTATED AS "GENE". These requirements are easy to accomplish with the program Ape (a plasmid editor), which will save your output to the correct format for this program. Either that or manually adjust the text in the genbank file. Note that this program selects only enzymes or enzyme pairs that cuts at least once within the specified gene. 
@@ -25,5 +59,4 @@ What this program does:
 <p>&nbsp;</p>
 
 <b>Program Output:</b>
-
-&nbsp;&nbsp;&nbsp;&nbsp;![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
+![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
