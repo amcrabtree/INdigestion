@@ -56,7 +56,9 @@ flag | description
 <p>&nbsp;</p>
 
 <b>Program Input</b>
-- Full filename(s) of plasmid(s). When entering a list of files, separate by commas and no spaces between filenames. Include extension as part of the name. 
+- Plasmid file – Genbank or fasta file containing plasmid sequence
+- Enzyme CSV file (“my_enzymes.csv”) – File contains the names of the enzymes you have on hand; update to match your stocks; doesn't need to be included in arguments unless you move it outside the file with the python script
+- Dictionary CSV file (“enzyme_dictionary.csv”) – File contains the names and cutting patterns of most palindromic restriction digest enzymes; update if necessary
 <p>&nbsp;</p>
 
 <b>Program Output</b>
