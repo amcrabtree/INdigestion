@@ -55,9 +55,43 @@ flag | description
 - Reference file "enzyme_dictionary.csv" must include all enzymes you have in your lab, though it can contain more. Ideally this file would have information for all restriction enzymes available, but I didn't want to add them all myself. There are hundreds. 
 <p>&nbsp;</p>
 
-<b>Program Input:</b>
+<b>Program Input</b>
 - Full filename(s) of plasmid(s). When entering a list of files, separate by commas and no spaces between filenames. Include extension as part of the name. 
 <p>&nbsp;</p>
 
-<b>Program Output:</b>
+<b>Program Output</b>
+- Sizes of expected bands print on command line screen. 
 ![indigestion_input_output.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_input_output.jpeg)
+<p>&nbsp;</p>
+
+<b>Examples</b>
+
+view all the options (“--help" = “-h”)
+```
+python INdigestion.py --help
+```
+
+makes sure program is working right (“--test" = “-t”)
+```
+python INdigestion.py --test	
+```
+
+minimum input
+```
+python INdigestion.py -p test_plasmid.gb	
+```
+
+don't need to cut within an insert
+```
+python INdigestion.py -p test_plasmid.gb -i	
+```
+
+the plasmid file is a fasta
+```
+python INdigestion.py -p test_plasmid.fa -f	
+```
+
+change minimum number of bands, no insert
+```
+python INdigestion.py -p test_plasmid.gb -i -n 4
+```
