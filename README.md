@@ -7,6 +7,7 @@ What this program does:
 * [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/), [zenity](https://linuxconfig.org/how-to-use-graphical-widgets-in-bash-scripts-with-zenity)
 
 Downloading zenity
+
 &nbsp;&nbsp;&nbsp;&nbsp;MacOS using [Homebrew](https://formulae.brew.sh/formula/zenity):
 ```
 brew install zenity
