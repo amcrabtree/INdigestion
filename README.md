@@ -4,7 +4,7 @@ What this program does:
 <p>&nbsp;</p>
 
 <b>Dependencies</b>
-* [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/), [zenity](https://linuxconfig.org/how-to-use-graphical-widgets-in-bash-scripts-with-zenity) (optional)
+* [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/), [zenity](https://linuxconfig.org/how-to-use-graphical-widgets-in-bash-scripts-with-zenity) (for use with "INdigestion_zenity" only)
 
 Downloading zenity
 
