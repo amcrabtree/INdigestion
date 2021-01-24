@@ -9,7 +9,6 @@ What this program does:
 ```
 python3 INdigestion.py -p my_plasmid.gb
 ```
-<p>&nbsp;</p>
 
 <b>Options</b>
 flag | description
