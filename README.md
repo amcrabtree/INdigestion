@@ -28,12 +28,6 @@ flag | description
 <b>Files Required for Program to Run:</b>
 1. <b>Annotated plasmid file.</b> Must be in genbank, ape, or fasta format. Program will only process circular plasmids. GENE INSERT MUST BE ANNOTATED AS "GENE". This can be done using [Ape (a plasmid editor)](https://jorgensen.biology.utah.edu/wayned/ape/) or a standard text editor. When the -i flag is selected, the program will select enzymes or enzyme pairs that cut at least once within the annotated gene. 
 2. <b>CSV with a list of your enzymes.</b> If you store the file as "my_enzymes.csv" in the same folder as the script, you won't need to use the -e flag to specify where your enzyme file is located. 
-
-<p>&nbsp;</p>
-
-<b>Default Band Size Parameters: </b>
-- Band size parameters can be changed by using additional options (see above)
-![indigestion_script.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_script.jpeg)
 <p>&nbsp;</p>
 
 <b>Program Input</b>
