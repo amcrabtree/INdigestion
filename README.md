@@ -4,28 +4,8 @@ What this program does:
 <p>&nbsp;</p>
 
 <b>Dependencies</b>
-* [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/), [zenity](https://linuxconfig.org/how-to-use-graphical-widgets-in-bash-scripts-with-zenity) (for use with "INdigestion_zenity" only)
+* [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/)
 
-Downloading zenity
-
-&nbsp;&nbsp;&nbsp;&nbsp;MacOS using [Homebrew](https://formulae.brew.sh/formula/zenity):
-```
-brew install zenity
-```
-&nbsp;&nbsp;&nbsp;&nbsp;Linux (or windows users using [Ubuntu](https://zoomadmin.com/HowToInstall/UbuntuPackage/zenity) app):
-```
-sudo apt-get update -y
-sudo apt-get install -y zenity
-```
-<p>&nbsp;</p>
-
-<b>Zenity Usage</b>
-- Right click on file ("INdigestion_zenity") and open with Terminal (MacOS) or Ubuntu app (Windows)
-- If there is a problem, navigate to your script in the Terminal/Ubuntu app and then change the file to executable. For example, if you downloaded the script to your Downloads folder on a MacOS: 
-```
-cd ~/Downloads
-chmod a+x INdigestion_zenity
-```
 <p>&nbsp;</p>
 
 <b>CLI Usage</b>
@@ -44,30 +24,26 @@ flag | description
 -s	[ARG]	| smallest size of desired bands
 -b	[ARG]	| biggest size of desired bands
 -g	[ARG]	| minimum gap size between bands
--i		| no insert in plasmid
--f		| plasmid in fasta format (no insert)
--t		| tests program with .gb test file
+-i		| plasmid has a gene insert requiring an internal cut
+-t		| tests program with associated test file
 -h		| help (print options)
 <p>&nbsp;</p>
 
 <b>Files Required for Program to Run:</b>
-1. Annotated plasmid file(s). Must be in genbank format. PLASMID MUST BE CIRCULARIZED. GENE INSERT MUST BE ANNOTATED AS "GENE". These requirements are easy to accomplish with the program Ape (a plasmid editor), which will save your output to the correct format for this program. Either that or manually adjust the text in the genbank file. Note that this program selects only enzymes or enzyme pairs that cuts at least once within the specified gene. 
-2. Reference files:
-   * my_enzymes.csv - <i>a csv containing the user's enzymes on-hand (to be modified by user)</i>
-   * enzyme_dictionary.csv - <i>a csv containing reference information for enzyme names and cutting patterns.</i> Note that not all enzymes are on here yet. Add more enzymes as necessary. NEB has a nice list of recognition sites [here](https://www.neb.com/tools-and-resources/selection-charts/alphabetized-list-of-recognition-specificities). 
+1. Annotated plasmid file. Must be in genbank, ape, or fasta format. Program will only process circular plasmids. GENE INSERT MUST BE ANNOTATED AS "GENE". This can be done using [Ape (a plasmid editor)](https://jorgensen.biology.utah.edu/wayned/ape/) or a standard text editor. When the -i flag is selected, the program will select enzymes or enzyme pairs that cut at least once within the annotated gene. 
+2. CSV with a list of your enzymes. If you store the file as "my_enzymes.csv" in the same folder as the script, you won't need to use the -e flag to specify where your enzyme file is located. 
+
 <p>&nbsp;</p>
 
 <b>Adjusting Script & Reference Files Before Running: </b>
 - Band size parameters can be changed within the python script:
 ![indigestion_script.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_script.jpeg)
-- Reference file "my_enzymes.csv" needs to be updated with your lab's list of enzymes. Make sure they are capitalized correctly too. They must match the names as printed in "enzyme_dictionary.csv" (case-sensitive). 
-- Reference file "enzyme_dictionary.csv" must include all enzymes you have in your lab, though it can contain more. Ideally this file would have information for all restriction enzymes available, but I didn't want to add them all myself. There are hundreds. 
+- Reference file "my_enzymes.csv" needs to be updated with your lab's list of enzymes. 
 <p>&nbsp;</p>
 
 <b>Program Input</b>
 - Plasmid file – Genbank or fasta file containing plasmid sequence
 - Enzyme CSV file (“my_enzymes.csv”) – File contains the names of the enzymes you have on hand; update to match your stocks; doesn't need to be included in arguments unless you move it outside the file with the python script
-- Dictionary CSV file (“enzyme_dictionary.csv”) – File contains the names and cutting patterns of most palindromic restriction digest enzymes; update if necessary
 <p>&nbsp;</p>
 
 <b>Program Output</b>
@@ -92,17 +68,12 @@ minimum input
 python INdigestion.py -p test_plasmid.gb	
 ```
 
-don't need to cut within an insert
+cut within an insert required
 ```
 python INdigestion.py -p test_plasmid.gb -i	
 ```
 
-the plasmid file is a fasta
-```
-python INdigestion.py -p test_plasmid.fa -f	
-```
-
-change minimum number of bands, no insert
+change minimum number of bands, cut within insert
 ```
 python INdigestion.py -p test_plasmid.gb -i -n 4
 ```
