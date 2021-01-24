@@ -26,8 +26,8 @@ flag | description
 <p>&nbsp;</p>
 
 <b>Files Required for Program to Run:</b>
-1. Annotated plasmid file. Must be in genbank, ape, or fasta format. Program will only process circular plasmids. GENE INSERT MUST BE ANNOTATED AS "GENE". This can be done using [Ape (a plasmid editor)](https://jorgensen.biology.utah.edu/wayned/ape/) or a standard text editor. When the -i flag is selected, the program will select enzymes or enzyme pairs that cut at least once within the annotated gene. 
-2. CSV with a list of your enzymes. If you store the file as "my_enzymes.csv" in the same folder as the script, you won't need to use the -e flag to specify where your enzyme file is located. 
+1. <b>Annotated plasmid file.</b> Must be in genbank, ape, or fasta format. Program will only process circular plasmids. GENE INSERT MUST BE ANNOTATED AS "GENE". This can be done using [Ape (a plasmid editor)](https://jorgensen.biology.utah.edu/wayned/ape/) or a standard text editor. When the -i flag is selected, the program will select enzymes or enzyme pairs that cut at least once within the annotated gene. 
+2. <b>CSV with a list of your enzymes.</b> If you store the file as "my_enzymes.csv" in the same folder as the script, you won't need to use the -e flag to specify where your enzyme file is located. 
 
 <p>&nbsp;</p>
 
