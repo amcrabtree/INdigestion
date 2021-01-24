@@ -31,10 +31,9 @@ flag | description
 
 <p>&nbsp;</p>
 
-<b>Adjusting Script & Reference Files Before Running: </b>
-- Band size parameters can be changed within the python script:
+<b>Default Band Size Parameters: </b>
+- Band size parameters can be changed by using additional options (see above)
 ![indigestion_script.jpeg](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/indigestion_script.jpeg)
-- Reference file "my_enzymes.csv" needs to be updated with your lab's list of enzymes. 
 <p>&nbsp;</p>
 
 <b>Program Input</b>
