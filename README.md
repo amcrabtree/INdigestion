@@ -1,12 +1,9 @@
 # INdigestion
 What this program does:
 "<u>I</u> <u>N</u>eed a <u>digestion</u>" ("INdigestion.py") is a python command-line app which prints expected gel band sizes from restriction digests. The user can specify which enzymes they have in their lab and what band sizes they prefer. For individuals preferring a graphic user interface, I'm working on a web app version of this using Plotly Dash. Stay tuned. 
-<p>&nbsp;</p>
 
 <b>Dependencies</b>
 * [python 3](https://www.python.org/downloads/), [biopython](https://biopython.org/)
-
-<p>&nbsp;</p>
 
 <b>CLI Usage</b>
 ```
