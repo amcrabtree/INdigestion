@@ -57,13 +57,10 @@ python INdigestion.py --test
 
 Output: 
 
-> ================================================================
-> 
 >         Displaying enzymes producing between 2 and 6 bands,
 >         with sizes between 500 nt and 4000 nt,
 >         with at least 100 nt gap between bands.
 > 
-> ----------------------------------------------------------------
 > Your plasmid: test_plasmid
 > 
 > Invalid enzyme: 'BgIII'
