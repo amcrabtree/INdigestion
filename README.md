@@ -99,3 +99,7 @@ python INdigestion.py \
   -i \
   -n 4
 ```
+
+## References
+
+ - Pretty web browser app made by [Streamlit](https://streamlit.io/)!
