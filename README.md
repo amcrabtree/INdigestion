@@ -18,6 +18,7 @@ pip install -r requirements.txt
 streamlit run stream_digest.py
 ```
 
+![streamlit.png](https://raw.githubusercontent.com/amcrabtree/INdigestion/master/images/streamlit.png)
 
 ## Run digest on CLI
 
