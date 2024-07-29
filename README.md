@@ -57,9 +57,9 @@ python INdigestion.py --test
 
 Output: 
 
->         Displaying enzymes producing between 2 and 6 bands,
->         with sizes between 500 nt and 4000 nt,
->         with at least 100 nt gap between bands.
+> Displaying enzymes producing between 2 and 6 bands,
+> with sizes between 500 nt and 4000 nt,
+> with at least 100 nt gap between bands.
 > 
 > Your plasmid: test_plasmid
 > 
@@ -79,8 +79,7 @@ Output:
 > Bands from XbaI + NdeI :         [760, 3023, 3655]
 > Bands from XhoI + XmnI :         [932, 3064, 3442]
 > Bands from NcoI + XmnI :         [932, 1424, 1910, 3172]
-> Bands from ClaI + XmnI :         [932, 3078, 3428]
-> ----------------------------------------------------------------              
+> Bands from ClaI + XmnI :         [932, 3078, 3428]          
 
 
 Digest must cut within an insert
