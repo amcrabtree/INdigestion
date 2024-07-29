@@ -1,10 +1,9 @@
 # INdigestion
 
-What this program does:
+This app calculates possible restriction digests, given a plasmid sequence and the lab's enzyme inventory. 
 
-This is app prints expected gel band sizes from restriction digests. The user specifies which enzymes they have in their lab and what band sizes they prefer. For individuals preferring a graphic user interface, a streamlit version is available which enables user interface using a web browser. 
 
-# Dependencies
+## Install
 
 This script requires Python 3.10. To install libraries, run:
 
