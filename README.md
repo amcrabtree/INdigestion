@@ -3,7 +3,7 @@
 This app calculates possible restriction digests, given a plasmid sequence and the lab's enzyme inventory. 
 
 
-# Installation
+## Install
 
 This script requires Python 3.10. To install libraries, run:
 
