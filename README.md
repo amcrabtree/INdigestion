@@ -2,6 +2,8 @@
 
 This app calculates possible restriction digests, given a plasmid sequence and the lab's enzyme inventory. 
 
+The web app is now available! See [https://indigestion.streamlit.app/](https://indigestion.streamlit.app/)
+
 
 ## Install
 
