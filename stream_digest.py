@@ -17,8 +17,10 @@ st.header("File input")
 
 seq_file_extensions = ["fa", "fas", "fasta", "gb", "gbk", "genbank", "ape"]
 plasmid_file = st.file_uploader("##### Plasmid file:", type=seq_file_extensions)
+st.link_button("Example file", "https://github.com/amcrabtree/INdigestion/blob/master/test/test_plasmid.gb")
 
 enzyme_file = st.file_uploader("##### Enzymes file:", type=["csv", "tsv", "txt"])
+st.link_button("Example file", "https://github.com/amcrabtree/INdigestion/blob/master/test/my_enzymes.txt")
 
 # Sidebar
 with st.sidebar:
