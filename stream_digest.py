@@ -8,11 +8,11 @@ import streamlit as st
 from io import StringIO
 from utils import frag_calc, frag_length_violation, gene_cut
 import pandas as pd
-from streamlit_feedback import streamlit_feedback
+# from streamlit_feedback import streamlit_feedback
 
-def _submit_feedback(user_response, emoji=None):
-    st.toast(f"Feedback submitted: {user_response}", icon=emoji)
-    return user_response.update({"some metadata": 123})
+# def _submit_feedback(user_response, emoji=None):
+#     st.toast(f"Feedback submitted: {user_response}", icon=emoji)
+#     return user_response.update({"some metadata": 123})
     
 st.set_page_config(page_title="INdigestion")
 
@@ -32,9 +32,9 @@ with st.sidebar:
     bp_size = st.slider("Size of desired bands (bp)", 25, 6000, value=(500, 4000), step=25)
     min_spacing = st.slider("minimum gap size between bands", 25, 1000, value=100, step=25)
     insert = st.toggle("Cut inside annotated insert?")
-    feedback = streamlit_feedback(feedback_type="thumbs",
-                                  optional_text_label="Feedback details",
-                                  on_submit=_submit_feedback)
+    # feedback = streamlit_feedback(feedback_type="thumbs",
+    #                               optional_text_label="Feedback details",
+    #                               on_submit=_submit_feedback)
 
 # Digest
 st.header("Digests")
