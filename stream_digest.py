@@ -55,7 +55,7 @@ if plasmid_file is not None and enzyme_file is not None:
     plasmid_seq = plasmid_record.seq
 
     # Load enzymes list into RestrictionBatch
-    my_enzymes_list = enzyme_text.split("\n")
+    my_enzymes_list = [e.strip() for e in enzyme_text.splitlines() if e.strip()]
     rb = RestrictionBatch()
     for enzyme in my_enzymes_list:
         try: 
@@ -79,11 +79,9 @@ if plasmid_file is not None and enzyme_file is not None:
 
             # check if fragments satisfy parameters
             if insert == True:
-                st.write("You indicated that there is an insert needing to be cut.")
                 gene_dx = gene_cut(one_enz_cut_pattern, plasmid_record)
-                if gene_dx != 1: # if there are no cuts within the gene insert, exit
-                    st.write("There is no cut within the insert annotated as \"gene\".")
-                    exit()
+                if gene_dx != 1: # if there are no cuts within the gene insert, skip
+                    continue
 
             if num_of_segments > 0:
                 cutting_enzymes_list.append(enz1)
@@ -98,7 +96,7 @@ if plasmid_file is not None and enzyme_file is not None:
                 
             else:
                 if len(segment_len_list) <= num_bands[1] and len(segment_len_list) >= num_bands[0]:   
-                    digest_dict['enzyme1'].append(enz1)
+                    digest_dict['enzyme1'].append(str(enz1))
                     digest_dict['enzyme2'].append("")
                     digest_dict['bands'].append(str(segment_len_list))
                     x_flag = 1
@@ -117,19 +115,19 @@ if plasmid_file is not None and enzyme_file is not None:
         if two_enz_cut_pattern:
             if insert == True:
                 gene_dx = gene_cut(two_enz_cut_pattern, plasmid_record)
-                if gene_dx != 1: # if there are no cuts within the gene insert, exit
-                    raise SystemExit
+                if gene_dx != 1: # if there are no cuts within the gene insert, skip
+                    continue
             segment_len_list = frag_calc(two_enz_cut_pattern, plasmid_seq)
             if frag_length_violation(segment_len_list, bp_size[0], bp_size[1], min_spacing):
                 segment_len_list = []
             else:
                 if len(segment_len_list) <= num_bands[1] and len(segment_len_list) >= num_bands[0]:   
-                    digest_dict['enzyme1'].append(enz_pair[0])
-                    digest_dict['enzyme2'].append(enz_pair[1])
+                    digest_dict['enzyme1'].append(str(enz_pair[0]))
+                    digest_dict['enzyme2'].append(str(enz_pair[1]))
                     digest_dict['bands'].append(str(segment_len_list))
                     x_flag = 1
     if x_flag == 0:
-        print("No eligible cut sites in this sequence. Relax parameters and try again.\n")
+        st.warning("No eligible cut sites in this sequence. Relax parameters and try again.")
     
     df = pd.DataFrame(digest_dict)
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    st.dataframe(df, width='stretch', hide_index=True)
